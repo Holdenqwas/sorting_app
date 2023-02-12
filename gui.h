@@ -10,16 +10,21 @@
 #include <wx/artprov.h>
 #include <wx/xrc/xmlres.h>
 #include <wx/string.h>
-#include <wx/stattext.h>
+#include <wx/bitmap.h>
+#include <wx/image.h>
+#include <wx/icon.h>
+#include <wx/menu.h>
 #include <wx/gdicmn.h>
 #include <wx/font.h>
 #include <wx/colour.h>
 #include <wx/settings.h>
+#include <wx/statusbr.h>
+#include <wx/panel.h>
 #include <wx/sizer.h>
+#include <wx/stattext.h>
+#include <wx/choice.h>
+#include <wx/textctrl.h>
 #include <wx/button.h>
-#include <wx/bitmap.h>
-#include <wx/image.h>
-#include <wx/icon.h>
 #include <wx/frame.h>
 
 ///////////////////////////////////////////////////////////////////////////
@@ -33,19 +38,21 @@ class t_main : public wxFrame
 	private:
 
 	protected:
-		wxStaticText* m_label_top;
-		wxButton* m_butt_change;
-		wxButton* m_butt_reset;
-		wxStaticText* m_label_bot;
-
-		// Virtual event handlers, override them in your derived class
-		void m_butt_changeOnButtonClick( wxCommandEvent& event );
-		void m_butt_resetOnButtonClick( wxCommandEvent& event );
-
+		wxMenuBar* m_menubar1;
+		wxMenu* m_mainMenu;
+		wxMenu* m_helpMenu;
+		wxStatusBar* m_statusBar1;
+		wxPanel* m_panel2;
+		wxStaticText* m_staticText2;
+		wxChoice* m_choiceTypeSort;
+		wxStaticText* m_staticText1;
+		wxTextCtrl* m_textCtrlCountPoints;
+		wxButton* m_buttonRun;
+		wxButton* m_buttonMesh;
 
 	public:
 
-		t_main( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("My gui"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 488,300 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
+		t_main( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Сортировка"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 700,400 ), long style = wxDEFAULT_FRAME_STYLE|wxTAB_TRAVERSAL );
 
 		~t_main();
 
